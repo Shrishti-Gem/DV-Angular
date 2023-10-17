@@ -1,0 +1,69 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button mat-button (click)="opened =!opened"><mat-icon>menu</mat-icon>
+    </button>
+    <button mat-button routerLink="/Page1">Home</button>
+    <button class="btn bg-light" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="opendialog()">Add New
+      Datasource</button>
+    <button mat-button>Action</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <mat-nav-list>
+      <a mat-list-item>About</a>
+      <a mat-list-item>Reports</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet>
+    
+    </router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+      <!-- <table class="table mt-8" >
+    <thead>
+        <tr>
+            <th>1</th>
+            <th scope="col">Database Name</th>
+            <button mat-raised-button (click)="openDialog()">Open dialog without animation</button>
+    </thead>
+    
+</table>  -->
+
+      <!-- <table class="table mt-3" style="color: rgb(9, 9, 9);">
+  <thead>
+      <tr>
+        <th> </th>
+          <th scope="col">Database Name</th>
+          <th scope="col">Action</th>
+         
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>ABC</td>
+          <td>
+              <button class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="openDialog()">
+                <mat-icon>open_in_new</mat-icon>
+              </button>
+          </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>XYZ</td>
+        <td>
+            <button class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="openDialog()">
+              <mat-icon>open_in_new</mat-icon>
+            </button>
+        </td>
+    </tr>
+
+  </tbody>
+</table>  -->
+
+   

@@ -1,0 +1,16 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-text" align-text="center">
+      <h4>Select Database</h4>
+    </span>
+  </div>
+</nav>
+<select [(ngModel)]="selectedOption">
+  <option value="SQL">SQL</option>
+  <option value="Excel">Excel</option>
+  <option value="MongoDB">MongoDB</option>
+  <option value="XML">XML</option>
+  <option value="Json">Json</option>
+
+</select>
+<button (click)="navigateToSelectedPage()">Next</button>

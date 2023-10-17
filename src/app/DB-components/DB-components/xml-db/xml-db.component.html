@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<nav class="navbar navbar-light" text-align="center" style="background-color: #e3f2fd;">
+    <button style="font-size:24px" ><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-filetype-xml" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.527 11.85h-.893l-.823 1.439h-.036L.943 11.85H.012l1.227 1.983L0 15.85h.861l.853-1.415h.035l.85 1.415h.908l-1.254-1.992 1.274-2.007Zm.954 3.999v-2.66h.038l.952 2.159h.516l.946-2.16h.038v2.661h.715V11.85h-.8l-1.14 2.596h-.025L4.58 11.85h-.806v3.999h.706Zm4.71-.674h1.696v.674H8.4V11.85h.791v3.325Z"/>
+      </svg> Database Source Info</button>
+</nav>
+
+<div class="form-container">
+<form [formGroup]="dbForm" (ngSubmit)="onSubmit()">
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Data Source Type :</label>
+        <div class="col-sm-10">
+            <label class="col-sm-3 col-form-label"><button style="font-size:24px">Excel <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-filetype-xml" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.527 11.85h-.893l-.823 1.439h-.036L.943 11.85H.012l1.227 1.983L0 15.85h.861l.853-1.415h.035l.85 1.415h.908l-1.254-1.992 1.274-2.007Zm.954 3.999v-2.66h.038l.952 2.159h.516l.946-2.16h.038v2.661h.715V11.85h-.8l-1.14 2.596h-.025L4.58 11.85h-.806v3.999h.706Zm4.71-.674h1.696v.674H8.4V11.85h.791v3.325Z"/>
+              </svg></button></label>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label  class="col-sm-2 col-form-label">Filepath :</label>
+        <!-- col-sm-4 varies the box size -->
+        <div class="col-sm-10">
+            <i class="fa fa-link icon"></i>
+            <input type="url" placeholder="Add a Link">
+        </div>
+        <div class="form-group-row">
+            <label class="col-sm-2 col-form-label" for="dbname">Filename :</label>
+            <input type="text" id="dbName" formControlName="dbName" placeholder="Enter filename" />
+        </div>
+    </div>
+   
+    <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" [disabled]="dbForm.invalid" class="btn btn-primary">Add Database</button>
+        </div>
+      </div> 
+</form>
+</div>
+
+
+
+  
