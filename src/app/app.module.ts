@@ -9,7 +9,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule } from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
-import {MatSelectModule} from '@angular/material/select'
+import {MatSelectModule} from '@angular/material/select';
+import {MatMenuModule} from '@angular/material/menu'
 
 import { FormsModule } from '@angular/forms';
 
@@ -59,7 +60,8 @@ import { TableselectionComponent } from './DB-components/DB-components/tablesele
     MatSelectModule,
     FormsModule,
     IconsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatMenuModule
     
 
     

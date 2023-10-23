@@ -6,6 +6,7 @@ import { XmlDBComponent } from './DB-components/DB-components/xml-db/xml-db.comp
 import { MongoDBComponent } from './DB-components/DB-components/mongo-db/mongo-db.component';
 import { JsonDBComponent } from './DB-components/DB-components/json-db/json-db.component';
 import { Page1Component } from './page1/page1.component';
+import { TableselectionComponent } from './DB-components/DB-components/tableselection/tableselection.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'XML', component:XmlDBComponent},
   {path: 'MongoDB', component:MongoDBComponent},
   {path: 'Json', component:JsonDBComponent},
+  {path: 'Tableselect',component:TableselectionComponent}
   
   
 ];
