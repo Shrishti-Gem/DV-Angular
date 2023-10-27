@@ -10,7 +10,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule } from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
-import {MatMenuModule} from '@angular/material/menu'
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTreeModule} from '@angular/material/tree';
 
 import { FormsModule } from '@angular/forms';
 
@@ -27,6 +28,8 @@ import { JsonDBComponent } from './DB-components/DB-components/json-db/json-db.c
 import { IconsModule } from 'angular-bootstrap-md';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { DropDownTreeModule } from '@syncfusion/ej2-angular-dropdowns';
+
 import { SelectDbComponent } from './select-db/select-db.component';
 import { Page1Component } from './page1/page1.component';
 import { TableselectionComponent } from './DB-components/DB-components/tableselection/tableselection.component';
@@ -42,7 +45,7 @@ import { TableselectionComponent } from './DB-components/DB-components/tablesele
     JsonDBComponent,
     SelectDbComponent,
     Page1Component,
-    TableselectionComponent,
+    TableselectionComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,10 @@ import { TableselectionComponent } from './DB-components/DB-components/tablesele
     FormsModule,
     IconsModule,
     ReactiveFormsModule,
-    MatMenuModule
+    MatMenuModule,
+    DropDownTreeModule,
+    MatTreeModule,
+    
     
 
     
