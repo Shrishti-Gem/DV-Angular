@@ -1,151 +1,52 @@
-
 <div class="createUser text-left bg-white rounded shadow py-3 formGroup">
-    <form [formGroup]="createUserForm" >
-      <h1 style="color: rgb(54, 114, 224)">Create User</h1>
-      <br />
-      <!--Name-->
-      <label for="first name" class="label">
-        Name<small style="color:black">*</small>
-      </label>
-      <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Enter your Name" formControlName="name" ngModel required/>
-      <span
-            *ngIf="createUserForm.controls['name'].invalid &&
-                createUserForm.controls['name'].touched"
-            class="alert text-danger"
-          >
+    <form [formGroup]="columnForm">
+        <h2 style="color: rgb(54, 114, 224) ">Column Config</h2>
+        <br />
+        <label for="id" class="label">ID<small style="color: black">*</small></label><br />
+        <input type="number" placeholder="Enter id" class="form-control" formControlName="id" name="id" required />
+
+        <span *ngIf="columnForm.controls['id'].invalid &&
+              columnForm.controls['is'].touched" class="alert text-danger">
+            Please enter id
+        </span>
+
+        <br />
+
+        <!--Name-->
+        <label for="first name" class="label">
+            First Name<small style="color:black">*</small>
+        </label>
+        <input type="text" class="form-control" id="first name" name="first name" aria-describedby="nameHelp"
+            placeholder="Enter your Name" formControlName="name" ngModel required />
+        <span *ngIf="columnForm.controls['first name'].invalid &&
+                columnForm.controls['first name'].touched" class="alert text-danger">
             Please enter Name
-          </span>
-      
-      <br /><br />
-      <!--Email-->
-      
-      
-      <!--Mobile Number-->
-      <label for="mobileNumber" class="label"
-        >Mobile Number<small style="color: black">*</small></label
-      ><br />
-      <input
-        type="tel"
-        placeholder="Enter Mobile Number"
-        class="form-control"
-        formControlName="mobileNumber"
-        name="mobile"
-        required
-      />
-      <span
-            *ngIf="createUserForm.controls['mobileNumber'].invalid &&
-                createUserForm.controls['mobileNumber'].touched"
-            class="alert text-danger"
-          >
-            Please enter correct Mobile Number
-          </span>
-  
-      <br />
-      
-           
-  
-      <label for="tech" class="label"
-        >Technology<small style="color: black">*</small></label
-      >
-      <br />
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value="C"
-          formControlName="C"
-        />
-        <label class="form-check-label" for="flexCheckDefault">C</label>
-      </div>
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value="C++"
-          formControlName="Cpp"
-        />
-        <label class="form-check-label" for="flexCheckDefault">C++</label>
-      </div>
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value="Java"
-          formControlName="Java"
-        />
-        <label class="form-check-label" for="flexCheckDefault">Java</label>
-      </div>
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value="Python"
-          formControlName="Python"
-        />
-        <label class="form-check-label" for="flexCheckDefault">Python</label>
-      </div>
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value="JavaScript"
-          formControlName="JavaScript"
-        />
-        <label class="form-check-label" for="flexCheckDefault">JavaScript</label>
-      </div>
-      <br />
-  
-      <!--Profile Picture-->
-      
-      
-  
-      <!--Preview button-->
-      <!-- <button
-        type="submit"
-        class="btn btn-primary"
-        [disabled]="!createUserForm.valid"
-        (click)="openPopup()"
-      >
-        Preview
-      </button> -->
+        </span>
+
+        <br /><br />
+        <label for="last name" class="label">
+            Last Name<small style="color:black">*</small>
+        </label>
+        <input type="text" class="form-control" id="last name" name="last name" aria-describedby="nameHelp"
+            placeholder="Enter your Name" formControlName="name" ngModel required />
+        <span *ngIf="columnForm.controls['last name'].invalid &&
+                columnForm.controls['last name'].touched" class="alert text-danger">
+            Please enter Name
+        </span>
+
+        <br /><br />
+
+
+
+
+
+
+
+
+
+
+
     </form>
-  </div>
-  
-  <div
-    class="modal"
-    tabindex="-1"
-    role="dialog"
-    
-  >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Details of the user</h4>
-        </div>
-        <div class="modal-class modal-body">
-          
-          <ul class="list-group">
-            <!-- <strong>Name</strong>
-            <li class="list-group-item">{{ users.name }}</li>
-            <strong>Gender</strong>
-            <li class="list-group-item">{{ users.gender }}</li>
-            <strong>Email</strong>
-            <li class="list-group-item">{{ users.email }}</li>
-            <strong>Mobile no</strong>
-            <li class="list-group-item">{{ users.mobileNumber }}</li>
-            <strong>Category</strong>
-            <li class="list-group-item">{{ users.category }}</li>
-            <strong>Technology</strong>
-            <li class="list-group-item">{{ users.technology }}</li>
-          </ul> -->
-        <!-- </div> -->
-        <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-success" (click)="saveData()">
-            Submit
-          </button>
-          <button type="button" class="btn btn-danger" (click)="closePopup()">
-            Close
-          </button>
-        </div> -->
-      
-    
+</div>
+
+<div class="modal" tabindex="-1" role="dialog">

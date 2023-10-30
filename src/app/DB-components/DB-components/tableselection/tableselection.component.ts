@@ -1,7 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-
-import { MatDialog, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { FormComponent } from 'src/app/form/form.component';
 
 interface Database {
@@ -16,36 +15,19 @@ interface Database {
   styleUrls: ['./tableselection.component.scss'],
 })
 
-export class TableselectionComponent implements OnInit {
-  ngOnInit(): void {
-    
+export class TableselectionComponent {
+  constructor(private dialogRef: MatDialog){}
+  openDialog(){
+    this.dialogRef.open(FormComponent);
+  
   }
-  dialog: any;
-  openDialog() {
-    const dialogRef = this.dialog.open(FormComponent);
-  
-    dialogRef.afterClosed().subscribe((result: any) =>{
-  
-      // console.log(`Dialog result: ${result}`);
-  
-    });
+    database: Database[] = [
+      {value: 'id', viewValue: 'ID'},
+      {value: 'name', viewValue: 'Name'},
+      {value: '', viewValue: ''},
+    ];
   }
-  
 
-  database: Database[] = [
-    { value: 'id', viewValue: 'ID' },
-    { value: 'name', viewValue: 'Name' },
-    { value: '', viewValue: '' },
-  ];
-}
-// openDialog() {
-//   const dialogRef = this.dialog.open(TableselectionComponent);
-
-//   dialogRef.afterClosed().subscribe(result => {
-//     console.log(`Dialog result: ${result}`);
-//   });
-// }
-
-// checked = false;
-
+  // checked = false;
+ 
 
