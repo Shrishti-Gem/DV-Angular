@@ -7,6 +7,8 @@ import { MongoDBComponent } from './DB-components/DB-components/mongo-db/mongo-d
 import { JsonDBComponent } from './DB-components/DB-components/json-db/json-db.component';
 import { Page1Component } from './page1/page1.component';
 import { TableselectionComponent } from './DB-components/DB-components/tableselection/tableselection.component';
+import { FormComponent } from './form/form.component';
+
 
 
 const routes: Routes = [
@@ -17,8 +19,8 @@ const routes: Routes = [
   {path: 'XML', component:XmlDBComponent},
   {path: 'MongoDB', component:MongoDBComponent},
   {path: 'Json', component:JsonDBComponent},
-  {path: 'Tableselect',component:TableselectionComponent}
-  
+  {path: 'Tableselect',component:TableselectionComponent},
+  {path: 'form',component:FormComponent}
   
 ];
 

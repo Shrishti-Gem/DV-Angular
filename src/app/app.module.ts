@@ -33,6 +33,9 @@ import { DropDownTreeModule } from '@syncfusion/ej2-angular-dropdowns';
 import { SelectDbComponent } from './select-db/select-db.component';
 import { Page1Component } from './page1/page1.component';
 import { TableselectionComponent } from './DB-components/DB-components/tableselection/tableselection.component';
+import { FormComponent } from './form/form.component';
+
+
 
 @NgModule({
   declarations: [
@@ -45,7 +48,9 @@ import { TableselectionComponent } from './DB-components/DB-components/tablesele
     JsonDBComponent,
     SelectDbComponent,
     Page1Component,
-    TableselectionComponent
+    TableselectionComponent,
+    FormComponent,
+    
   ],
   imports: [
     BrowserModule,

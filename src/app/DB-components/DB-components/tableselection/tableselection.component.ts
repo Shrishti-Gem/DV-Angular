@@ -1,39 +1,51 @@
-import {SelectionModel} from '@angular/cdk/collections';
-import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
- 
+import { Component, OnInit } from '@angular/core';
+
+import { MatDialog, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
+import { FormComponent } from 'src/app/form/form.component';
+
+interface Database {
+  value: string;
+  viewValue: string;
 }
-const ELEMENT_DATA: PeriodicElement[] = [
- 
-];
+
 
 @Component({
   selector: 'app-tableselection',
   templateUrl: './tableselection.component.html',
-  styleUrls: ['./tableselection.component.scss']
+  styleUrls: ['./tableselection.component.scss'],
 })
-export class TableselectionComponent  {
-  // checked = false;
+
+export class TableselectionComponent implements OnInit {
+  ngOnInit(): void {
+    
+  }
+  dialog: any;
+  openDialog() {
+    const dialogRef = this.dialog.open(FormComponent);
   
-displayedColumns: string[] = ['select', 'position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  selection = new SelectionModel<PeriodicElement>(true, []);
-
-
-  isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.data.length;
-    return numSelected === numRows;
+    dialogRef.afterClosed().subscribe((result: any) =>{
+  
+      // console.log(`Dialog result: ${result}`);
+  
+    });
   }
+  
 
-  masterToggle() {
-    this.isAllSelected() ?
-        this.selection.clear() :
-        this.dataSource.data.forEach(row => this.selection.select(row));
-  }
-
+  database: Database[] = [
+    { value: 'id', viewValue: 'ID' },
+    { value: 'name', viewValue: 'Name' },
+    { value: '', viewValue: '' },
+  ];
 }
+// openDialog() {
+//   const dialogRef = this.dialog.open(TableselectionComponent);
+
+//   dialogRef.afterClosed().subscribe(result => {
+//     console.log(`Dialog result: ${result}`);
+//   });
+// }
+
+// checked = false;
+
+
