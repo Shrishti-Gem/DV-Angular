@@ -1,5 +1,5 @@
 <div class="createUser text-left bg-white rounded shadow py-3 formGroup">
-    <form [formGroup]="columnForm">
+    <form [formGroup]="columnForm" >
         <h2 style="color: rgb(54, 114, 224) ">Column Config</h2>
         <br />
         <label for="id" class="label">ID<small style="color: black">*</small></label><br />
@@ -23,7 +23,7 @@
             Please enter Name
         </span>
 
-        <br /><br />
+        <br />
         <label for="last name" class="label">
             Last Name<small style="color:black">*</small>
         </label>
@@ -33,19 +33,25 @@
                 columnForm.controls['last name'].touched" class="alert text-danger">
             Please enter Name
         </span>
-
+        <br>
+         <label for="car model" class="label">
+            Car Model<small style="color:black">*</small>
+        </label>
+        <input type="text" class="form-control" id="car model" name="car model" aria-describedby="nameHelp"
+            placeholder="Enter Car Model" formControlName="car model" ngModel required />
+        <span *ngIf="columnForm.controls['car model'].invalid &&
+                columnForm.controls['car model'].touched" class="alert text-danger">
+            Please enter Car model
+        </span>
         <br /><br />
-
-
-
-
-
-
-
-
-
-
-
+        <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!columnForm.valid"
+        (click)="openPopup()"
+      >
+        Preview
+      </button>
     </form>
 </div>
 

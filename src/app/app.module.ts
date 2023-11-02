@@ -34,6 +34,7 @@ import { SelectDbComponent } from './select-db/select-db.component';
 import { Page1Component } from './page1/page1.component';
 import { TableselectionComponent } from './DB-components/DB-components/tableselection/tableselection.component';
 import { FormComponent } from './form/form.component';
+import { JointableComponent } from './jointable/jointable.component';
 
 
 
@@ -50,6 +51,7 @@ import { FormComponent } from './form/form.component';
     Page1Component,
     TableselectionComponent,
     FormComponent,
+    JointableComponent,
     
   ],
   imports: [

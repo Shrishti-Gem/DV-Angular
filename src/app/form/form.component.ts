@@ -31,11 +31,19 @@ export class FormComponent {
         Validators.pattern('^[0-9]*$'),
         
       ]),
+      carmodel:new FormControl(null, [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(30),
+        Validators.pattern('[a-zA-Z ]*'),
+      ]),
       
     });
   }
   displayStyle = 'none';
-
+  openPopup() {
+    this.displayStyle = 'block';
+  }
   
   }
 

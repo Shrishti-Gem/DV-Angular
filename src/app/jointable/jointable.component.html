@@ -1,0 +1,40 @@
+
+
+<div class="row">
+    <form>
+    <div class="col-md-7">
+      <div class="pb-3">
+        
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+            <h5>Table 1</h5>
+            <mat-form-field>
+              <mat-label></mat-label>
+              <mat-select [(ngModel)]="selectedValue" name="food">
+                <mat-option *ngFor="let join of joins" [value]="join.value">
+                  {{join.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <p> Selected join: {{selectedValue}} </p>
+        </div>
+        <div class="col-md-4">
+           
+                <h5>Type of Join</h5>
+                <mat-form-field>
+                  <mat-label>Select type of Join</mat-label>
+                  <mat-select [(ngModel)]="selectedValue" name="food">
+                    <mat-option *ngFor="let join of joins" [value]="join.value">
+                      {{join.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <p> Selected join: {{selectedValue}} </p>
+        </div>
+        <div class="col-md-4">.col-md-6</div>
+      </div>
+    </div>
+</form>
+    <div class="col-md-4">.col-md-5</div>
+  </div>
