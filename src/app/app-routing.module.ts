@@ -8,6 +8,8 @@ import { JsonDBComponent } from './DB-components/DB-components/json-db/json-db.c
 import { Page1Component } from './page1/page1.component';
 import { TableselectionComponent } from './DB-components/DB-components/tableselection/tableselection.component';
 import { FormComponent } from './form/form.component';
+import { Page2Component } from './page2/page2.component';
+import { OperationsComponent } from './operations/operations.component';
 
 
 
@@ -20,12 +22,14 @@ const routes: Routes = [
   {path: 'MongoDB', component:MongoDBComponent},
   {path: 'Json', component:JsonDBComponent},
   {path: 'Tableselect',component:TableselectionComponent},
-  {path: 'form',component:FormComponent}
-  
+  {path: 'form',component:FormComponent},
+  {path: 'Page2', component:Page2Component},
+  {path: 'Operations', component:OperationsComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

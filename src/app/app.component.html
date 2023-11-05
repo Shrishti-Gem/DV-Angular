@@ -3,7 +3,7 @@
     <button mat-button (click)="opened =!opened"><mat-icon>menu</mat-icon>
     </button>
     <button mat-button routerLink="/Page1">Home</button>
-    <button class="btn bg-light" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="opendialog()">Add New
+    <button mat-button data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="opendialog()">Add New
       Datasource</button>
     
     <button mat-button [matMenuTriggerFor]="databases">
@@ -21,7 +21,7 @@
     </mat-menu>
     <mat-menu #sql="matMenu">
       <button mat-menu-item routerLink="/Page1">Table 1</button>
-      <button mat-menu-item>Table 2</button>
+      <button mat-menu-item routerLink="/Page2">Table 2</button>
     </mat-menu>
     <mat-menu #table="matMenu">
       <button mat-menu-item>Table 1</button>
@@ -32,6 +32,8 @@
       <button mat-menu-item>Column 2</button>
       <button mat-menu-item>Column 3</button>
     </mat-menu>
+    <button mat-button routerLink="/Operations">Operations</button>
+    <button mat-button>LogOut</button>
 
   </mat-toolbar-row>
 </mat-toolbar>
@@ -40,7 +42,7 @@
     <mat-nav-list>
       <a mat-list-item>About</a>
       <a mat-list-item>Reports</a>
-      <mat-tree [dataSource]="dataSource"  
+      <mat-tree [dataSource]="dataSource" 
       [treeControl]="treeControl"  
       class="example-tree"> 
 <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle> 
@@ -71,5 +73,3 @@
   </mat-sidenav-content>
 
 </mat-sidenav-container>
-
-      
