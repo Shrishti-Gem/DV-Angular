@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {FormGroup,FormControl,Validators,FormBuilder} from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import {FormGroup,FormControlName,Validators,FormBuilder} from '@angular/forms';
 
 
 @Component({
@@ -8,42 +9,23 @@ import {FormGroup,FormControl,Validators,FormBuilder} from '@angular/forms';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
-  columnForm!: FormGroup;
-  // users: userDetails;
+  columnForm: FormGroup ;
 
-  ngOnInit(): void {
-    this.columnForm = new FormGroup({
-      firstname: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(2),
-        Validators.maxLength(30),
-        Validators.pattern('[a-zA-Z ]*'),
-      ]),
-      lastname: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(2),
-        Validators.maxLength(30),
-        Validators.pattern('[a-zA-Z ]*'),
-      ]),
-    
-      id: new FormControl(null, [
-        Validators.required,
-        Validators.pattern('^[0-9]*$'),
-        
-      ]),
-      carmodel:new FormControl(null, [
-        Validators.required,
-        Validators.minLength(2),
-        Validators.maxLength(30),
-        Validators.pattern('[a-zA-Z ]*'),
-      ]),
+  constructor(private formbuilder:FormBuilder,private http:HttpClient) {
+   this.columnForm = this.formbuilder.group({
+    firstname:"",
+    lastname:"",
+    id:"",
+
+   });
       
-    });
-  }
-  displayStyle = 'none';
-  openPopup() {
-    this.displayStyle = 'block';
+    }
+ 
+ submitForm() {
+    const formData = this.columnForm.value;
+    console.log(formData);
   }
   
-  }
 
+}
+  

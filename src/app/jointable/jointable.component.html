@@ -1,40 +1,96 @@
-
-
-<div class="row">
-    <form>
-    <div class="col-md-7">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#e3f2fd">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- navbar -->
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/jointable">Join Condition </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="">Group By</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="">Order By</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#">Where</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#">Aggregate</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#">Summary</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<form>
+  <div class="row">
+    <div class="col-md-7" style="background-color:rgb(178, 213, 215);">
       <div class="pb-3">
-        
+        <h4>Select Tables to perform Join</h4>
       </div>
       <div class="row">
-        <div class="col-md-4">
-            <h5>Table 1</h5>
-            <mat-form-field>
-              <mat-label></mat-label>
-              <mat-select [(ngModel)]="selectedValue" name="food">
-                <mat-option *ngFor="let join of joins" [value]="join.value">
-                  {{join.viewValue}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-            <p> Selected join: {{selectedValue}} </p>
+        <div class="col-md-6">
+          <h5>Table 1</h5>
+          <mat-form-field>
+            <mat-label>Select Table</mat-label>
+            <mat-select [(ngModel)]="selectedTable1" name="table1">
+              <mat-option *ngFor="let table1 of tables" [value]="table1.value">
+                {{table1.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <p> Selected Table1: {{selectedTable1}} </p>
         </div>
-        <div class="col-md-4">
-           
-                <h5>Type of Join</h5>
-                <mat-form-field>
-                  <mat-label>Select type of Join</mat-label>
-                  <mat-select [(ngModel)]="selectedValue" name="food">
-                    <mat-option *ngFor="let join of joins" [value]="join.value">
-                      {{join.viewValue}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-                <p> Selected join: {{selectedValue}} </p>
+
+        <div class="col-md-6">
+          <h5>Table 2</h5>
+          <mat-form-field>
+            <mat-label>Select Table</mat-label>
+            <mat-select [(ngModel)]="selectedTable2" name="table2">
+              <mat-option *ngFor="let table2 of tables" [value]="table2.value">
+                {{table2.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <p> Selected Table2: {{selectedTable2}} </p>
         </div>
-        <div class="col-md-4">.col-md-6</div>
+
+        <div class="col-sm-6 col-lg-8">
+          <h5>Type of Join</h5>
+          <mat-form-field>
+            <mat-label>Select type of Join</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="join">
+              <mat-option *ngFor="let join of joins" [value]="join.value">
+                {{join.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <p> Selected join: {{selectedValue}} </p>
+
+        </div>
+        <div class="row">
+          <div class="col-md-8" class="text-center">
+            <button type="button" class="btn btn-primary">Select Joining Key(s)</button>
+          </div>
+        </div>
       </div>
     </div>
-</form>
-    <div class="col-md-4">.col-md-5</div>
+
+    <div class="col-md-5" style="background-color:rgb(148, 227, 201);">
+      <div class="pb-3">
+        <h4>Joining Conditions Added till now</h4>
+        <table>
+          <tr>
+            {{selectedTable1}} Joins {{selectedTable2}} performs {{selectedValue}}
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
+</form>

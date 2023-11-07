@@ -15,6 +15,7 @@ export class SqlDbComponent  implements OnInit{
   onSubmit(){
     if (this.dbForm.valid){
       const dbName =this.dbForm.get('dbName').value;
+      console.log(dbName);
     }
   }
 }

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { userDetails } from './userDetails';
+
 @Injectable({
   providedIn: 'root'
 })
-export class DataserviceService {
+export class FormdataService {
 
   data:userDetails[] = [];
   constructor() { }
@@ -15,4 +16,5 @@ export class DataserviceService {
   sendData(){
     return this.data
   }
+
 }
