@@ -9,161 +9,66 @@
       <button mat-button routerLink="/Page1">Summary</button>
     </mat-toolbar-row>
 </mat-toolbar>
-<div>
-    <div style="width: 70%" class="header-box">Choose Aggregate Functions</div>
-    <div style="width: 30%; left: 70%" class="header-box">Aggregate Functions Described</div>
-</div>
-    <div class="left box">
+<div class="header-box left">Choose Aggregate Functions</div>
+<div class="header-box right">Aggregate Functions Described</div>
+<div class="left box">
+        <div style="top:20%; position: absolute">
+            <div class="select-operator">
+                <div class="function-input-description">Select Table Name</div>
+                <mat-form-field>
+                    <mat-label>Table Names</mat-label>
+                    <mat-select [(ngModel)]="selectedTableName">
+                    <mat-option *ngFor="let tableName of tableNames" [value]="tableName">{{tableName}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <p *ngIf="selectedTableName">Selected Table Name: {{ selectedTableName }}</p>
+            </div>
+
+            <div class="select-operator">
+                <div class="function-input-description">Select Column Name</div>
+                    <mat-form-field>
+                        <mat-label>Column Names</mat-label>
+                        <mat-select [(ngModel)]="selectedColumnName" multiple>
+                        <mat-option *ngFor="let columnName of tableData[selectedTableName]" [value]="columnName">{{columnName}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                <p *ngIf="selectedColumnName">Selected Column Name: {{ selectedColumnName }}</p>
+            </div>
+                       
+            <div class="select-operator">
+                <div class="function-input-description">Select Operator</div>
+                <div class="dropdown">
+                    <mat-form-field>
+                        <mat-label>Aggregate Functions</mat-label>
+                        <mat-select [formControl]="operations" [(ngModel)]="selectedOptions" multiple>
+                        <mat-option *ngFor="let option of options" [value]="option.name">{{option.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <p *ngIf="selectedOptions">Aggregate Function: {{ selectedOptions }}</p>
+            </div>
+        </div>
         <div class="button-div">
             <button routerLink="/Page1" class="save-button">Save</button>
-            <button routerLink="/Page1" class="save-button">Add Another</button>
+            <!-- <button routerLink="/Page1" class="save-button">Add Another</button> -->
         </div>
     </div>
     <div class="right box">
         <br><br><br>
-        <table class="agg-table">
+        <table class="agg-table" style="top:20%">
+            
             <tr class="row">
                 <div class="img"><img src="https://via.placeholder.com/30x30" /></div>
-                <div class="text">Count(Table1.Column1)</div>
+                <div class="text"><p *ngIf="selectedTableName">{{ selectedTableName }}</p><p *ngIf="selectedColumnName">.{{ selectedColumnName }}</p></div>
                 <div class="img"><img src="https://via.placeholder.com/30x30" /></div>
             </tr>
-            <tr class="row">
-                <div class="img"><img src="https://via.placeholder.com/30x30" /></div>
-                <div class="text">Sum(Table2.Column1)</div>
-                <div class="img"><img src="https://via.placeholder.com/30x30" /></div>
-            </tr>
-            <tr class="row">
-                <div class="img"><img src="https://via.placeholder.com/30x30" /></div>
-                <div class="text">Avg(Table3.Column1)</div>
-                <div class="img"><img src="https://via.placeholder.com/30x30" /></div>
-            </tr>
-            <tr class="row">
-                <div class="img"><img src="https://via.placeholder.com/30x30" /></div>
-                <div class="text">Max(Table1.Column1)</div>
-                <div class="img"><img src="https://via.placeholder.com/30x30" /></div>
-            </tr>
+            
         </table>
         <div class="button-div">
             <button routerLink="/Page1" class="save-button"> Reset All </button>
             <button routerLink="/Page1" class="save-button"> Save All </button>
         </div>
         <div class="lower-button-div">
-            <div class="save-button">Save and Generate Report ></div>
+            <button class="save-button">Save and Generate Report ></button>
         </div>
     </div>
-    <div style="width: 8%; height: 3%; left: 633px; top: 640px; position: absolute; justify-content: flex-start; align-items: center; display: inline-flex">
-        <div style="padding-top: 6px; padding-bottom: 6px; justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex">
-            <div style="width: 20px; align-self: stretch; padding-top: 1px; padding-bottom: 1px; justify-content: flex-start; align-items: flex-start; display: flex">
-                <div style="width: 20px; height: 20px; background: rgba(255, 255, 255, 0); box-shadow: 0px 0px 0px 3px rgba(0, 113, 227, 0.10); border-radius: 6px; border: 1px rgba(0, 113, 227, 0.20) solid"></div>
-            </div>
-            <div class="nav-bar-tab-box">Variance</div>
-        </div>
-    </div>
-    <div style="width: 8%; height: 3%; left: 633px; top: 465px; position: absolute; justify-content: flex-start; align-items: center; display: inline-flex">
-        <div style="padding-top: 6px; padding-bottom: 6px; justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex">
-            <div style="width: 20px; align-self: stretch; padding-top: 1px; padding-bottom: 1px; justify-content: flex-start; align-items: flex-start; display: flex">
-                <div style="width: 20px; height: 20px; background: rgba(255, 255, 255, 0); box-shadow: 0px 0px 0px 3px rgba(0, 113, 227, 0.10); border-radius: 6px; border: 1px rgba(0, 113, 227, 0.20) solid"></div>
-            </div>
-            <div class="nav-bar-tab-box">Count</div>
-        </div>
-    </div>
-    <div style="width: 8%; height: 3%; left: 633px; top: 430px; position: absolute; justify-content: flex-start; align-items: center; display: inline-flex">
-        <div style="padding-top: 6px; padding-bottom: 6px; justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex">
-            <div style="width: 20px; align-self: stretch; padding-top: 1px; padding-bottom: 1px; justify-content: flex-start; align-items: flex-start; display: flex">
-                <div style="width: 20px; height: 20px; background: #0071E3; box-shadow: 0px 0px 0px 3px rgba(0, 113, 227, 0.10); border-radius: 6px; overflow: hidden; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
-                    <div style="width: 10px; height: 9.51px; background: white"></div>
-                </div>
-            </div>
-            <div class="nav-bar-tab-box">Sum</div>
-        </div>
-    </div>
-    <div class="select-operator">
-        <div class="function-input-description">Select Operator</div>
-        <div class="partial">
-            <div class="partial-content">Aggregate Functions</div>
-            <i class="material-icons">arrow_drop_down</i>
-        </div>
-    </div>
-    <div class="select-operator" style="left: 474px; top: 287px;">
-        <div class="function-input-description">Select Table Name</div>
-        <div class="partial">
-            <div class="partial-content">Table Names</div>
-            <i class="material-icons">arrow_drop_down</i>
-        </div>
-    </div>
-    
-    <div style="left: 751px; top: 287px" class="select-operator">
-        <div class="function-input-description">Select column name</div>
-        <div class="partial">
-            <div class="partial-content">Column Names</div>
-            <i class="material-icons">arrow_drop_down</i>
-        </div>
-    </div>
-   
-    
-    
-    <div style="width: 8%; height: 3%; left: 633px; top: 535px; position: absolute; justify-content: flex-start; align-items: center; display: inline-flex">
-        <div style="padding-top: 6px; padding-bottom: 6px; justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex">
-            <div style="width: 20px; align-self: stretch; padding-top: 1px; padding-bottom: 1px; justify-content: flex-start; align-items: flex-start; display: flex">
-                <div style="width: 20px; height: 20px; background: rgba(255, 255, 255, 0); box-shadow: 0px 0px 0px 3px rgba(0, 113, 227, 0.10); border-radius: 6px; border: 1px rgba(0, 113, 227, 0.20) solid"></div>
-            </div>
-            <div style="color: #1D1D1F; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 22px; word-wrap: break-word">Max</div>
-        </div>
-    </div>
-    <div style="width: 8%; height: 3%; left: 633px; top: 605px; position: absolute; justify-content: flex-start; align-items: center; display: inline-flex">
-        <div style="padding-top: 6px; padding-bottom: 6px; justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex">
-            <div style="width: 20px; align-self: stretch; padding-top: 1px; padding-bottom: 1px; justify-content: flex-start; align-items: flex-start; display: flex">
-                <div style="width: 20px; height: 20px; background: rgba(255, 255, 255, 0); box-shadow: 0px 0px 0px 3px rgba(0, 113, 227, 0.10); border-radius: 6px; border: 1px rgba(0, 113, 227, 0.20) solid"></div>
-            </div>
-            <div class="nav-bar-tab-box">Median</div>
-        </div>
-    </div>
-    <div style="width: 8%; height: 3%; left: 633px; top: 570px; position: absolute; justify-content: flex-start; align-items: center; display: inline-flex">
-        <div style="padding-top: 6px; padding-bottom: 6px; justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex">
-            <div style="width: 20px; align-self: stretch; padding-top: 1px; padding-bottom: 1px; justify-content: flex-start; align-items: flex-start; display: flex">
-                <div style="width: 20px; height: 20px; background: #0071E3; box-shadow: 0px 0px 0px 3px rgba(0, 113, 227, 0.10); border-radius: 6px; overflow: hidden; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
-                    <div style="width: 10px; height: 9.51px; background: white"></div>
-                </div>
-            </div>
-            <div class="nav-bar-tab-box">Mean</div>
-        </div>
-    </div>
-    <div style="width: 8%; height: 3%; left: 633px; top: 500px; position: absolute; justify-content: flex-start; align-items: center; display: inline-flex">
-        <div style="padding-top: 6px; padding-bottom: 6px; justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex">
-            <div style="width: 20px; align-self: stretch; padding-top: 1px; padding-bottom: 1px; justify-content: flex-start; align-items: flex-start; display: flex">
-                <div style="width: 20px; height: 20px; background: #0071E3; box-shadow: 0px 0px 0px 3px rgba(0, 113, 227, 0.10); border-radius: 6px; overflow: hidden; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
-                    <div style="width: 10px; height: 9.51px; background: white"></div>
-                </div>
-            </div>
-            <div style="color: #1D1D1F; font-size: 14px; font-family: Inter; font-weight: 400; line-height: 22px; word-wrap: break-word">Min</div>
-        </div>
-    </div>
-    
-    
-<!-- </div> -->
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Select Aggregate Functions
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" *ngFor="let option of options" href="#">
-      <input type="checkbox" [(ngModel)]="option.selected" (change)="onOptionChange()"/>
-      {{ option.name }}
-    </a>
-  </div>
-</div>
-    <button mat-button [matMenuTriggerFor]="databases">
-        <div class="valign-center">
-        <span>Select Aggregate Functions</span>
-        <i class="material-icons">arrow_drop_down</i>
-        </div>
-    </button>
-    <mat-menu #databases="matMenu">
-        <button mat-menu-item>SUM</button>
-        <button mat-menu-item>COUNT</button>
-        <button mat-menu-item>MIN</button>
-        <button mat-menu-item>MAX</button>
-        <button mat-menu-item>MEAN</button>
-        <button mat-menu-item>MEDIAN</button>
-        <button mat-menu-item>VARIANCE</button>
-    </mat-menu>
