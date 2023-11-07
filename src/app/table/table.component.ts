@@ -7,5 +7,4 @@ import { Router } from '@angular/router';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent {
-
 }
