@@ -10,6 +10,7 @@ import { TableselectionComponent } from './DB-components/DB-components/tablesele
 import { FormComponent } from './form/form.component';
 import { Page2Component } from './page2/page2.component';
 import { OperationsComponent } from './operations/operations.component';
+import { JoinComponent } from './join/join.component';
 
 
 
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'Tableselect',component:TableselectionComponent},
   {path: 'form',component:FormComponent},
   {path: 'Page2', component:Page2Component},
-  {path: 'Operations', component:OperationsComponent}
+  {path: 'Operations', component:OperationsComponent},
+  {path: 'Join', component:JoinComponent}
 ];
 
 @NgModule({

@@ -1,17 +1,17 @@
-import { NgModule,} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatIconModule} from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDialogModule } from '@angular/material/dialog';
-import {MatTableModule} from '@angular/material/table';
-import {MatSelectModule} from '@angular/material/select';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatTreeModule} from '@angular/material/tree';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTreeModule } from '@angular/material/tree';
 
 import { FormsModule } from '@angular/forms';
 
@@ -35,6 +35,7 @@ import { Page1Component } from './page1/page1.component';
 import { TableselectionComponent } from './DB-components/DB-components/tableselection/tableselection.component';
 import { FormComponent } from './form/form.component';
 import { OperationsComponent } from './operations/operations.component';
+import { JoinComponent } from './join/join.component';
 
 
 
@@ -52,6 +53,7 @@ import { OperationsComponent } from './operations/operations.component';
     TableselectionComponent,
     FormComponent,
     OperationsComponent,
+    JoinComponent,
     
   ],
   imports: [

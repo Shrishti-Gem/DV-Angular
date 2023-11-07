@@ -32,11 +32,23 @@
       <button mat-menu-item>Column 2</button>
       <button mat-menu-item>Column 3</button>
     </mat-menu>
-    <button mat-button routerLink="/Operations">Operations</button>
-    <button mat-button>LogOut</button>
 
+    <button mat-button [matMenuTriggerFor]="operations">
+      <div class="valign-center">
+        <span>Operations</span>
+        <i class="material-icons"></i>
+      </div>
+    </button>
+    <mat-menu #operations="matMenu">
+      <button mat-menu-item routerLink="/Join">Join</button>
+      <button mat-menu-item routerLink="/Page1">Union</button>
+      <button mat-menu-item routerLink="/Page1">Intersection</button>
+      <button mat-menu-item routerLink="/Page1">Minus</button>
+    </mat-menu>
+    <button mat-button>LogOut</button>
   </mat-toolbar-row>
 </mat-toolbar>
+
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side" [(opened)]="opened">
     <mat-nav-list>
