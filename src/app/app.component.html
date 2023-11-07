@@ -6,20 +6,24 @@
     <button mat-button data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="opendialog()">Add New
       Datasource</button>
     
-    <button mat-button [matMenuTriggerFor]="databases">
+      <!-- Operation button -->
+    <button mat-button [matMenuTriggerFor]="operations">
       <div class="valign-center">
-        <span>Databases</span>
+        <span>Operations</span>
         <i class="material-icons">arrow_drop_down</i>
       </div>
     </button>
-    <mat-menu #databases="matMenu">
-      <button mat-menu-item [matMenuTriggerFor]="sql">SQL</button>
-      <button mat-menu-item [matMenuTriggerFor]="table">Mongodb</button>
-      <button mat-menu-item>JSON</button>
-      <button mat-menu-item>Excel</button>
-      <button mat-menu-item>XML</button>
+    <mat-menu #operations="matMenu">
+      <!-- <button mat-menu-item [matMenuTriggerFor]="sql">SQL</button> -->
+      <button mat-menu-item routerLink="/jointable" >Join Condition</button>
+      <button mat-menu-item >Order By</button>
+      <button mat-menu-item>Group BY</button>
+      <button mat-menu-item>Where</button>
+      <button mat-menu-item>Display</button>
+      <button mat-menu-item>Aggregate</button>
+      <button mat-menu-item>Summary</button>
     </mat-menu>
-    <mat-menu #sql="matMenu">
+    <!-- <mat-menu #sql="matMenu">
       <button mat-menu-item routerLink="/Page1">Table 1</button>
       <button mat-menu-item routerLink="/Page2">Table 2</button>
     </mat-menu>
@@ -31,7 +35,7 @@
       <button mat-menu-item>Column 1</button>
       <button mat-menu-item>Column 2</button>
       <button mat-menu-item>Column 3</button>
-    </mat-menu>
+    </mat-menu> -->
 
     <button mat-button [matMenuTriggerFor]="operations">
       <div class="valign-center">

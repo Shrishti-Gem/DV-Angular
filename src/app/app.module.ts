@@ -36,6 +36,7 @@ import { TableselectionComponent } from './DB-components/DB-components/tablesele
 import { FormComponent } from './form/form.component';
 import { OperationsComponent } from './operations/operations.component';
 import { JoinComponent } from './join/join.component';
+import { JointableComponent } from './jointable/jointable.component';
 
 
 
@@ -54,6 +55,7 @@ import { JoinComponent } from './join/join.component';
     FormComponent,
     OperationsComponent,
     JoinComponent,
+    JointableComponent,
     
   ],
   imports: [

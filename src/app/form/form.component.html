@@ -1,52 +1,13 @@
 <div class="createUser text-left bg-white rounded shadow py-3 formGroup">
     <form [formGroup]="columnForm">
-        <h2 style="color: rgb(54, 114, 224) ">Column Config</h2>
-        <br />
-        <label for="id" class="label">ID<small style="color: black">*</small></label><br />
-        <input type="number" placeholder="Enter id" class="form-control" formControlName="id" name="id" required />
+        <label>ID:</label>
+        <input type="number" formControlName="id">
+        <label>First Name:</label>
+        <input type="text" formControlName="firstname" />
+        <br>
 
-        <span *ngIf="columnForm.controls['id'].invalid &&
-              columnForm.controls['is'].touched" class="alert text-danger">
-            Please enter id
-        </span>
+        <label>LastName:</label><br>
+        <input type="text" formControlName="lastname" /><br>
 
-        <br />
-
-        <!--Name-->
-        <label for="first name" class="label">
-            First Name<small style="color:black">*</small>
-        </label>
-        <input type="text" class="form-control" id="first name" name="first name" aria-describedby="nameHelp"
-            placeholder="Enter your Name" formControlName="name" ngModel required />
-        <span *ngIf="columnForm.controls['first name'].invalid &&
-                columnForm.controls['first name'].touched" class="alert text-danger">
-            Please enter Name
-        </span>
-
-        <br /><br />
-        <label for="last name" class="label">
-            Last Name<small style="color:black">*</small>
-        </label>
-        <input type="text" class="form-control" id="last name" name="last name" aria-describedby="nameHelp"
-            placeholder="Enter your Name" formControlName="name" ngModel required />
-        <span *ngIf="columnForm.controls['last name'].invalid &&
-                columnForm.controls['last name'].touched" class="alert text-danger">
-            Please enter Name
-        </span>
-
-        <br /><br />
-
-
-
-
-
-
-
-
-
-
-
+        <button (click)="submitForm()">Submit</button>
     </form>
-</div>
-
-<div class="modal" tabindex="-1" role="dialog">

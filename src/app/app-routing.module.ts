@@ -11,6 +11,7 @@ import { FormComponent } from './form/form.component';
 import { Page2Component } from './page2/page2.component';
 import { OperationsComponent } from './operations/operations.component';
 import { JoinComponent } from './join/join.component';
+import { JointableComponent } from './jointable/jointable.component';
 
 
 
@@ -26,7 +27,9 @@ const routes: Routes = [
   {path: 'form',component:FormComponent},
   {path: 'Page2', component:Page2Component},
   {path: 'Operations', component:OperationsComponent},
-  {path: 'Join', component:JoinComponent}
+  {path: 'Join', component:JoinComponent},
+  {path: 'jointable', component:JointableComponent}
+  
 ];
 
 @NgModule({
