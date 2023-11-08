@@ -5,11 +5,11 @@ import { TableComponent } from '../table/table.component';
 import { SelectDbComponent } from '../select-db/select-db.component';
 
 @Component({
-  selector: 'app-page1',
-  templateUrl: './page1.component.html',
-  styleUrls: ['./page1.component.scss']
+  selector: 'app-page2',
+  templateUrl: './page2.component.html',
+  styleUrls: ['./page2.component.scss']
 })
-export class Page1Component {
+export class Page2Component {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
@@ -35,4 +35,5 @@ export class Page1Component {
   log(state: any){
     console.log(state)
   }
+
 }
