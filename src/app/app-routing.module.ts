@@ -12,6 +12,7 @@ import { Page2Component } from './page2/page2.component';
 import { OperationsComponent } from './operations/operations.component';
 import { JoinComponent } from './join/join.component';
 import { JointableComponent } from './jointable/jointable.component';
+import { JoinconditionComponent } from './joincondition/joincondition.component';
 
 
 
@@ -28,7 +29,9 @@ const routes: Routes = [
   {path: 'Page2', component:Page2Component},
   {path: 'Operations', component:OperationsComponent},
   {path: 'Join', component:JoinComponent},
+  {path: 'Joincondition', component:JoinconditionComponent},
   {path: 'jointable', component:JointableComponent}
+  
   
 ];
 

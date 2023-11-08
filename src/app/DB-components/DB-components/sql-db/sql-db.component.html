@@ -3,30 +3,66 @@
     <button style="font-size:24px">Database Source Info<i class="fa fa-database"></i></button>
 </nav>
 <div class="form-container">
-<form [formGroup]="dbForm" (ngSubmit)="onSubmit()">
+
+<form [formGroup]="dbForm" >
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Data Source Type</label>
         <div class="col-sm-10">
             <label class="col-sm-3 col-form-label"><button style="font-size:20px">Relational Database <i
                         class="fa fa-database"></i></button></label>
         </div>
-    </div>
-    <div class="form-group row">
-        <label  class="col-sm-2 col-form-label">URL</label>
-        <!-- col-sm-4 varies the box size -->
+  </div>
+    <div class="form-group-row">
+        <label  class="col-sm-2 col-form-label" for="user_name">Select Database dialect</label>
         <div class="col-sm-10">
-            <i class="fa fa-link icon"></i>
-            <input type="url" placeholder="Add a Link">
-        </div>
-        <div class="form-group-row">
-            <label class="col-sm-2 col-form-label" for="dbname">Database Name:</label>
-            <input type="text" id="dbName" formControlName="dbName" placeholder="Enter name" />
+            <select name="relational_type" formControlName='relational_type' class="form-select">
+                <option value="" selected>Select type of Relational Database</option>
+                <option selected>Open this select menu</option>
+                <option value="postgresql">PostgreSQL</option>
+                <option value="mysql">MySQL</option>
+                <option value="mssql">Microsoft SQL</option>
+                <option value="oracle">Oracle</option>
+                    <!--  need an extra field of warehouse for snow-flake render less and more using js -->
+                <option value="oracle" disabled>Snowflake</option>
+                <option value="oracle" disabled>Sql-Lite</option>
+            </select>
         </div>
     </div>
-   
-    <div class="form-group row">
+
+    <div class="form-group-row">
+        <label  class="col-sm-2 col-form-label" for="user_name">Username</label>
         <div class="col-sm-10">
-          <button type="submit" class="btn btn-primary">Add Database</button>
+            <input type="text" id='username'  formControlName="username" placeholder="Username" class="form-control">
+        </div>
+    </div>
+    <div class="form-group-row">
+        <label class="col-sm-2 col-form-label" for="dbname">Password</label>
+        <div class="col-sm-10">
+            <input type="password" id="dbname" formControlName="password" placeholder="Password" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group-row">
+        <label class="col-sm-2 col-form-label" for="host_name">Host Name</label>
+        <div class="col-sm-10">
+            <input type="text" id="host_name" formControlName="hostname" placeholder="Host Name" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group-row">
+        <label class="col-sm-2 col-form-label" for="port_assigned">Port Assigned</label>
+        <div class="col-sm-10">
+            <input type="text" id="port_assigned" formControlName="portassigned" placeholder="Port Assigned" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group-row">
+        <label class="col-sm-2 col-form-label" for="databasename">Database Name</label>
+        <div class="col-sm-10">
+            <input type="text" id="databasename" formControlName="databasename" placeholder="Database Name" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group-row my-2">
+        <div class="col-sm-10">
+          <button type="submit" (click)="onSubmit()"  class="btn btn-primary">Add Database</button>
         </div>
       </div> 
 </form>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { TableComponent } from './table/table.component';
 import { SelectDbComponent } from './select-db/select-db.component';
 import { NestedTreeControl } from "@angular/cdk/tree";
@@ -105,5 +106,4 @@ export class AppComponent implements OnInit{
   log(state: any){
     console.log(state)
   }
-
 }

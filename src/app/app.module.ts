@@ -12,7 +12,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTreeModule } from '@angular/material/tree';
-
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -37,7 +36,7 @@ import { FormComponent } from './form/form.component';
 import { OperationsComponent } from './operations/operations.component';
 import { JoinComponent } from './join/join.component';
 import { JointableComponent } from './jointable/jointable.component';
-
+import { JoinconditionComponent } from './joincondition/joincondition.component';
 
 
 @NgModule({
@@ -56,6 +55,7 @@ import { JointableComponent } from './jointable/jointable.component';
     OperationsComponent,
     JoinComponent,
     JointableComponent,
+    JoinconditionComponent,
     
   ],
   imports: [
@@ -78,10 +78,6 @@ import { JointableComponent } from './jointable/jointable.component';
     MatMenuModule,
     DropDownTreeModule,
     MatTreeModule,
-    
-    
-
-    
     
     
     

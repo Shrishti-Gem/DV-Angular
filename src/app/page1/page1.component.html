@@ -1,39 +1,38 @@
-
-
-<table class="table mt-3" style="color: rgb(9, 9, 9);">
-<thead>
+<div *ngIf="usertabledata">
+  <table class="table mt-3" style="color: rgb(9, 9, 9);">
+  <thead>
     <tr>
-      <th> </th>
-        <th scope="col">Database Name</th>
-        <th scope="col">Action</th>
-       
+      <th scope="col">Table Name</th>
+      <th scope="col">Datasource Name</th>
+      <th scope="col">Datasource Type</th>
+      <th scope="col">View Datasource details</th>
+      <th scope="col"></th>
     </tr>
-</thead>
-<tbody>
-    <tr>
-        <td>1</td>
-        <td>ABC</td>
-        <td>
-            <button class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="openDialog()">
-              <mat-icon>open_in_new</mat-icon>
-            </button>
-        </td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>XYZ</td>
-      <td>
-          <button class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="openDialog()">
-            <mat-icon>open_in_new</mat-icon>
-          </button>
-      </td>
-  </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of usertabledata">
+        <tr>
+          <td> {{ item.custom_name }} </td>
+          <td> {{ item.databasename }} </td>
+          <td> {{item.type}} </td>
+            <td> 
+              <!-- function : post :  seetablecolumns --> 
+              <!-- make a csrf token using js -->
+              <!-- send the data as form-data -->
 
-</tbody>
-</table> 
-
-   
-
-
- 
-
+              <button class="btn btn-info"  data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="openDialog(item.custom_name,item.type,item.databasename)">
+                <mat-icon>open_in_new</mat-icon>
+              </button>
+              <!-- <button type="submit" class="btn btn-primary" (click)="RedirectToShowColumns(item.custom_name,item.type,item.databasename)">See Columns</button> -->
+            </td>
+            <td>
+              <!-- function : post :  refreshtable -->
+              <!-- make a csrf token using js --> 
+              <!-- send the data as form data  -->
+              <button type="submit" class="btn btn-primary" (click)="RefreshTable(item.custom_name,item.type,item.databasename,item.uri)" >Refresh</button>
+          </td>
+        </tr>
+        </ng-container>
+      </tbody>
+  </table>
+</div>
