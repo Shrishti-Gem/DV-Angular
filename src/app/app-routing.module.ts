@@ -26,7 +26,8 @@ const routes: Routes = [
   {path: 'Json', component:JsonDBComponent},
   {path: 'Tableselect',component:TableselectionComponent},
   {path: 'form',component:FormComponent},
-  {path: 'jointable', component:JointableComponent}
+  {path: 'jointable', component:JointableComponent},
+  {path: 'join', component:JoinComponent}
   
 ];
 
