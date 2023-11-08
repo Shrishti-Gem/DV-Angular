@@ -13,7 +13,7 @@ import { OperationsComponent } from './operations/operations.component';
 import { JoinComponent } from './join/join.component';
 import { JointableComponent } from './jointable/jointable.component';
 import { JoinconditionComponent } from './joincondition/joincondition.component';
-
+import { GroupbyComponent } from './groupby/groupby.component';
 
 
 const routes: Routes = [
