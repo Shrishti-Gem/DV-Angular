@@ -2,3 +2,166 @@ button{
     border: #1D1D1F;
     padding-left: 15px;
 }
+.container{
+    height:1192px;
+}
+.nav-bar-tab-box{
+    color: #1D1D1F;
+    font-size: 14px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 22px;
+    word-wrap: break-word;
+}
+.header-box{
+    top: 64px;
+    position: absolute;
+    mix-blend-mode: darken;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    height: 64px;
+    background: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: black;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.box{
+    height:100vh;
+    top: 128px;
+    position: absolute;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+    flex-direction: column;
+    align-items: center;
+    display: inline-flex;
+}
+.left{
+    width: 70%;
+}
+.right{
+    width: 30%;
+    left: 70%;
+}
+.agg-table{
+    background: white;
+    width: 80%;
+    text-align: center;
+    color: black;    
+    word-wrap: break-word;
+}
+.row{
+    height: fit-content;
+    display: flex;
+    border: 1px #205072 solid;
+}
+.img{
+    flex:1;
+    size: 30px 30px;
+    padding: 7px 0px;
+}
+.text{
+    flex: 4;
+    padding-top: 12px;
+    font-size: 12px;
+    align-content:center;
+}
+.save-button{
+    border:1px #1D1D1F;
+    padding: 11px 16px;
+    position: relative;
+    background: linear-gradient(0deg, white 0%, white 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.10) 100%);
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-flex;
+    text-align: center;
+    border: 1px black;
+    color: black;
+    font-size: 20px;
+    font-family: Outfit;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+.button-div{
+    position: absolute;
+    top: 80vh;
+    display: flex;
+    justify-content: center;
+}
+.lower-button-div{
+    position: absolute;
+    top: 85vh;
+    display: flex;
+    justify-content: center;
+}
+.select-operator{
+    height: 45px;
+    // position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3px;
+    display: inline-flex;
+    top: 10%;
+    padding: 0 15px;
+}
+.function-input-description{
+    color: black;
+    font-size: 9px;
+    font-family: Roboto;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.80px;
+    word-wrap: break-word;
+}
+.drop-down-button{
+    width: 10px;
+    height: 10px;
+    position: relative;
+}
+.agg-options{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;  
+}
+.op-options{
+    width: 8%;
+    height: 3%;
+    justify-content: flex-start;
+    align-items: center;
+    display: inline-flex;
+}
+.op-options2{
+    padding: 3px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: flex;
+}
+.checkbox{
+    width: 20px;
+    align-self: stretch;
+    padding: 1px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+}
+.checkbox-border{
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0px 0px 0px 3px rgba(0, 113, 227, 0.10);
+    border-radius: 6px;
+    border: 1px rgba(0, 113, 227, 0.20) solid;
+}
+.checked-box{
+    background: #0071E3;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+}

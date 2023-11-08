@@ -1,11 +1,72 @@
 <mat-toolbar>
-    <mat-toolbar-row>
-      <button mat-button routerLink="/Operations">Join Condition</button>
-      <button mat-button routerLink="/Page1">GroupBy</button>
-      <button mat-button routerLink="/Page1">Order By</button>
-      <button mat-button routerLink="/Page1">Where</button>
-      <button mat-button routerLink="/Page1">Display</button>
-      <button mat-button routerLink="/Operations">Aggregate</button>
-      <button mat-button routerLink="/Page1">Summary</button>
-    </mat-toolbar-row>
+  <mat-toolbar-row>
+    <button mat-button routerLink="/Join">Join Condition</button>
+    <button mat-button routerLink="/Page1">GroupBy</button>
+    <button mat-button routerLink="/Page1">Order By</button>
+    <button mat-button routerLink="/Page1">Where</button>
+    <button mat-button routerLink="/Page1">Display</button>
+    <button mat-button routerLink="/Operations">Aggregate</button>
+    <button mat-button routerLink="/Page1">Summary</button>
+  </mat-toolbar-row>
 </mat-toolbar>
+<div class="header-box left">Select Tables To Perform Join</div>
+<div class="header-box right">Joining Conditions Added Till Now</div>
+<div class="left box">
+  <div style="top:20%; position: absolute">
+      <div class="select-operator">
+          <div class="function-input-description">Select Table 1</div>
+          <mat-form-field>
+              <mat-label>Table Names</mat-label>
+              <mat-select [(ngModel)]="selectedTable1">
+              <mat-option *ngFor="let tableName of tableNames" [value]="tableName">{{tableName}}</mat-option>
+              </mat-select>
+          </mat-form-field>
+          <p *ngIf="selectedTable1">Selected Table Name: {{ selectedTable1 }}</p>
+      </div>          
+                  
+      <div class="select-operator">
+          <div class="function-input-description">Type Of Join</div>
+          <mat-form-field>
+              <mat-label>Join Type</mat-label>
+              <mat-select [(ngModel)]="selectedOption"> <!-- [formControl]="operations"</mat-select>-->
+              <mat-option *ngFor="let option of options" [value]="option.name">{{option.name}}</mat-option>
+              </mat-select>
+          </mat-form-field>
+          <p *ngIf="selectedOption">Join Type: {{ selectedOption }}</p>
+      </div>
+
+      <div class="select-operator">
+          <div class="function-input-description">Select Table 2</div>
+          <mat-form-field>
+              <mat-label>Table Names</mat-label>
+              <mat-select [(ngModel)]="selectedTable2">
+              <mat-option *ngFor="let tableName of tableNames" [value]="tableName">{{tableName}}</mat-option>
+              </mat-select>
+          </mat-form-field>
+          <p *ngIf="selectedTable2">Selected Table Name: {{ selectedTable2 }}</p>
+      </div>
+  </div>
+  <div class="button-div">
+      <button routerLink="/Joincondition" class="save-button">Select Joining Key(s) ></button>
+      <!-- <button routerLink="/Page1" class="save-button">Add Another</button> -->
+  </div>
+</div>
+<div class="right box">
+  <br><br><br>
+  <table class="agg-table" style="top:20%">
+      
+      <tr class="row">
+          <!-- <div class="img"><img src="https://via.placeholder.com/30x30" /></div> -->
+          <i class="material-icons">cloud</i>
+          <div class="text">{{ selectedTable1 ? selectedTable1 + ' ': '' }}{{ selectedOption ? selectedOption + ' ': '' }}{{ selectedTable2 ? selectedTable2 : '' }}</div>
+      </tr>
+      
+  </table>
+  <div class="button-div">
+      <button routerLink="/Joincondition" class="save-button"> Reset All </button>
+      <button routerLink="/Page1" class="save-button"> Validate All </button>
+  </div>
+  <div class="lower-button-div">
+      <button class="save-button">Save and Proceed to GroupBy ></button>
+  </div>
+</div>

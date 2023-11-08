@@ -14,6 +14,19 @@
 <div class="left box">
         <div style="top:20%; position: absolute">
             <div class="select-operator">
+                <div class="function-input-description">Select Operator</div>
+                <div class="dropdown">
+                    <mat-form-field>
+                        <mat-label>Aggregate Functions</mat-label>
+                        <mat-select [formControl]="operations" [(ngModel)]="selectedOptions" multiple>
+                        <mat-option *ngFor="let option of options" [value]="option.name">{{option.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <p *ngIf="selectedOptions">Aggregate Function: {{ selectedOptions }}</p>
+            </div>
+
+            <div class="select-operator">
                 <div class="function-input-description">Select Table Name</div>
                 <mat-form-field>
                     <mat-label>Table Names</mat-label>
@@ -28,25 +41,13 @@
                 <div class="function-input-description">Select Column Name</div>
                     <mat-form-field>
                         <mat-label>Column Names</mat-label>
-                        <mat-select [(ngModel)]="selectedColumnName" multiple>
+                        <mat-select [(ngModel)]="selectedColumnName">
                         <mat-option *ngFor="let columnName of tableData[selectedTableName]" [value]="columnName">{{columnName}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                 <p *ngIf="selectedColumnName">Selected Column Name: {{ selectedColumnName }}</p>
             </div>
                        
-            <div class="select-operator">
-                <div class="function-input-description">Select Operator</div>
-                <div class="dropdown">
-                    <mat-form-field>
-                        <mat-label>Aggregate Functions</mat-label>
-                        <mat-select [formControl]="operations" [(ngModel)]="selectedOptions" multiple>
-                        <mat-option *ngFor="let option of options" [value]="option.name">{{option.name}}</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <p *ngIf="selectedOptions">Aggregate Function: {{ selectedOptions }}</p>
-            </div>
         </div>
         <div class="button-div">
             <button routerLink="/Page1" class="save-button">Save</button>
@@ -59,8 +60,7 @@
             
             <tr class="row">
                 <div class="img"><img src="https://via.placeholder.com/30x30" /></div>
-                <div class="text"><p *ngIf="selectedTableName">{{ selectedTableName }}</p><p *ngIf="selectedColumnName">.{{ selectedColumnName }}</p></div>
-                <div class="img"><img src="https://via.placeholder.com/30x30" /></div>
+                <div class="text">{{ selectedOptions ? selectedOptions + '(' : '' }}{{ selectedTableName ? selectedTableName + '.' : '' }}{{ selectedColumnName ? selectedColumnName + ')' : ''}}</div>
             </tr>
             
         </table>

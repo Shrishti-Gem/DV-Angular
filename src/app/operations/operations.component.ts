@@ -9,7 +9,7 @@ import {FormControl} from '@angular/forms';
 export class OperationsComponent {
   data= {                                        // Replace with your actual data
     'table_name1' : ['col1','col2','col3'],
-    'table_name2' : ['col1','col2','col3'],
+    'table_name2' : ['col4','col5','col6'],
     'table_name3' : ['col1','col2','col3'],
     'table_name4' : ['col1','col2','col3'],
   }

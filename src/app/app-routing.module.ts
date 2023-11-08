@@ -12,8 +12,8 @@ import { Page2Component } from './page2/page2.component';
 import { OperationsComponent } from './operations/operations.component';
 import { JoinComponent } from './join/join.component';
 import { JointableComponent } from './jointable/jointable.component';
+import { JoinconditionComponent } from './joincondition/joincondition.component';
 import { GroupbyComponent } from './groupby/groupby.component';
-
 
 
 const routes: Routes = [
@@ -26,8 +26,17 @@ const routes: Routes = [
   {path: 'Json', component:JsonDBComponent},
   {path: 'Tableselect',component:TableselectionComponent},
   {path: 'form',component:FormComponent},
+<<<<<<< HEAD
   {path: 'jointable', component:JointableComponent},
   {path: 'join', component:JoinComponent}
+=======
+  {path: 'Page2', component:Page2Component},
+  {path: 'Operations', component:OperationsComponent},
+  {path: 'Join', component:JoinComponent},
+  {path: 'Joincondition', component:JoinconditionComponent},
+  {path: 'jointable', component:JointableComponent}
+>>>>>>> f53071369967d1ce913b70d4794e690f2afcdfb6
+  
   
 ];
 

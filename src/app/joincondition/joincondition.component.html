@@ -1,0 +1,74 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+      <button mat-button routerLink="/Join">Join Condition</button>
+      <button mat-button routerLink="/Page1">GroupBy</button>
+      <button mat-button routerLink="/Page1">Order By</button>
+      <button mat-button routerLink="/Page1">Where</button>
+      <button mat-button routerLink="/Page1">Display</button>
+      <button mat-button routerLink="/Operations">Aggregate</button>
+      <button mat-button routerLink="/Page1">Summary</button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="header-box left">Define Join Condition</div>
+<div class="header-box right">Joining Conditions Added Till Now</div>
+<div class="left box">
+    <div style="top:20%; position: absolute">
+        <div class="select-operator">
+            <div>{{selectedTable1}}</div>
+            <div class="function-input-description">Select Joining Key</div>
+            <mat-form-field>
+                <mat-label>Column Names</mat-label>
+                <mat-select [(ngModel)]="selectedColumn1">
+                <mat-option *ngFor="let columnName of tableData[selectedTable1]" [value]="columnName">{{columnName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <p *ngIf="selectedColumn1">Joining Key: {{ selectedColumn1 }}</p>
+        </div>
+                    
+        <div class="select-operator">
+            <div>JOIN TYPE</div>
+            <div class="function-input-description">{{ selectedOption }}</div>
+        </div>
+
+        <div class="select-operator">
+            <div>{{selectedTable2}}</div>
+            <div class="function-input-description">Select Joining Key</div>
+            <mat-form-field>
+                <mat-label>Column Names</mat-label>
+                <mat-select [(ngModel)]="selectedColumn2">
+                <mat-option *ngFor="let columnName of tableData[selectedTable2]" [value]="columnName">{{columnName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <p *ngIf="selectedColumn2">Joining Key: {{ selectedColumn2 }}</p>
+        </div>
+    </div>
+    <div class="button-div">
+        <button routerLink="/Join" class="save-button">Define for Other Tables</button>
+        <!-- <button routerLink="/Page1" class="save-button">Add Another</button> -->
+    </div>
+</div>
+<div class="right box">
+    <br><br><br>
+    <table class="agg-table" style="top:20%">
+        
+        <tr class="row">
+            <div class="img"><img src="https://via.placeholder.com/30x30" /></div>
+            <!-- <div class="text">
+                <p *ngIf="selectedTable1">{{ selectedTable1 }}</p>
+                <p *ngIf="selectedColumn1">.{{ selectedColumn1 }}</p>
+                <p *ngIf="selectedOption"> {{ selectedOption }} </p>
+                <p *ngIf="selectedTable2">{{ selectedTable2 }}</p>
+                <p *ngIf="selectedColumn2">.{{ selectedColumn2 }}</p>
+            </div> -->
+            <div class="text">{{ selectedTable1 ? selectedTable1 + '.' : '' }}{{ selectedColumn1 }}{{ selectedOption ? ' ' + selectedOption : '' }}{{ selectedTable2 ? selectedTable2 + '.' : '' }}{{ selectedColumn2 }}</div>
+        </tr>
+        
+    </table>
+    <div class="button-div">
+        <button routerLink="/Joincondition" class="save-button"> Reset All </button>
+        <button routerLink="/Page1" class="save-button"> Validate All </button>
+    </div>
+    <div class="lower-button-div">
+        <button class="save-button">Save and Proceed to GroupBy ></button>
+    </div>
+</div>
