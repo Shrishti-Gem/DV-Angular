@@ -1,13 +1,89 @@
 <div class="createUser text-left bg-white rounded shadow py-3 formGroup">
     <form [formGroup]="columnForm">
-        <label>ID:</label>
-        <input type="number" formControlName="id">
-        <label>First Name:</label>
-        <input type="text" formControlName="firstname" />
-        <br>
+        <h2 style="color: rgb(54, 114, 224) ">Column Config</h2>
+        <br />
+        <label for="id" class="label">ID<small style="color: black">*</small></label><br />
+        <input type="number" placeholder="Enter id" class="form-control" formControlName="id" name="id" required />
 
-        <label>LastName:</label><br>
-        <input type="text" formControlName="lastname" /><br>
+        <span *ngIf="columnForm.controls['id'].invalid &&
+              columnForm.controls['id'].touched" class="alert text-danger">
+            Please enter id
+        </span>
 
-        <button (click)="submitForm()">Submit</button>
+        <br />
+
+        <!--Name-->
+        <label for="first name" class="label">
+            First Name<small style="color:black">*</small>
+        </label>
+        <input type="text" class="form-control" id="first name" name="first name" aria-describedby="nameHelp"
+            placeholder="Enter your Name" formControlName="name" ngModel required />
+        <span *ngIf="columnForm.controls['first name'].invalid &&
+                columnForm.controls['first name'].touched" class="alert text-danger">
+            Please enter Name
+        </span>
+
+        <br />
+        <label for="last name" class="label">
+            Last Name<small style="color:black">*</small>
+        </label>
+        <input type="text" class="form-control" id="last name" name="last name" aria-describedby="nameHelp"
+            placeholder="Enter your Name" formControlName="last name" ngModel required />
+        <span *ngIf="columnForm.controls['last name'].invalid &&
+                columnForm.controls['last name'].touched" class="alert text-danger">
+            Please enter Name
+        </span>
+        <br> 
+         <label for="car model" class="label">
+            Car Model<small style="color:black">*</small>
+        </label>
+        <input type="text" class="form-control" id="car model" name="car model" aria-describedby="nameHelp"
+            placeholder="Enter Car Model" formControlName="car model" ngModel required />
+        <span *ngIf="columnForm.controls['car model'].invalid &&
+                columnForm.controls['car model'].touched" class="alert text-danger">
+            Please enter Car model
+        </span> -->
+        <!-- <br /><br />
+        <button type="submit" class="btn btn-primary" [disabled]="!columnForm.valid"
+            (click)="openPopup()">Preview</button>
+            <button type="button" class="btn btn-success" (click)="saveData()">
+                Submit
+            </button>
+    </form>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{ display: displayStyle }">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Details of the user</h4>
+            </div>
+            <div class="modal-class modal-body">
+
+                <ul class="list-group">
+                    <strong>First Name</strong>
+                    <li class="list-group-item">{{ users.firstname }}</li>
+                    <strong>Last Name</strong>
+                    <li class="list-group-item">{{ users.lastname }}</li>
+                
+                   
+
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" (click)="saveData()">
+                    Submit
+                </button>
+                <button type="button" class="btn btn-danger" (click)="closePopup()">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div> -->
+<form [formGroup]="columnForm">
+    <input type="text" formControlName="firstname" label="First name" />
+    <label>First Name</label>
+    <input type="text" formControlName="lastname" />
+    <button (click)="submitForm()">Submit</button>
     </form>

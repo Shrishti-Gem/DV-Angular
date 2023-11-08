@@ -1,3 +1,5 @@
+ <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+                    
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#e3f2fd">
   <a class="navbar-brand" href="#"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
@@ -87,9 +89,21 @@
         <h4>Joining Conditions Added till now</h4>
         <table>
           <tr>
-            {{selectedTable1}} Joins {{selectedTable2}} performs {{selectedValue}}
+            <mat-list>
+              <mat-list-item> {{selectedTable1}} Joins {{selectedTable2}} performs {{selectedValue}} <i class='fa fa-trash'></i></mat-list-item>
+              <mat-divider>
+               </mat-divider>
+              <mat-list-item></mat-list-item>
+              <mat-list-item></mat-list-item>
+              <mat-divider></mat-divider>
+              <mat-list-item></mat-list-item>
+            </mat-list>
           </tr>
         </table>
+        <button class="btn btn-primary">Reset All</button>
+        <button class="btn btn-primary">Validate All</button>
+        <button class="btn btn-primary">Save All</button><br><br>
+        <button class="btn btn-primary" routerLink="/groupby">Proceed to Group By Condition</button>
       </div>
     </div>
   </div>

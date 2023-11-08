@@ -9,6 +9,7 @@ import { Page1Component } from './page1/page1.component';
 import { TableselectionComponent } from './DB-components/DB-components/tableselection/tableselection.component';
 import { FormComponent } from './form/form.component';
 import { JointableComponent } from './jointable/jointable.component';
+import { GroupbyComponent } from './groupby/groupby.component';
 
 
 
@@ -22,8 +23,8 @@ const routes: Routes = [
   {path: 'Json', component:JsonDBComponent},
   {path: 'Tableselect',component:TableselectionComponent},
   {path: 'form',component:FormComponent},
-  {path: 'jointable', component:JointableComponent}
-  
+  {path: 'jointable', component:JointableComponent},
+  {path: 'groupby', component:GroupbyComponent}
 ];
 
 @NgModule({
