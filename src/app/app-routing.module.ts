@@ -26,16 +26,16 @@ const routes: Routes = [
   {path: 'Json', component:JsonDBComponent},
   {path: 'Tableselect',component:TableselectionComponent},
   {path: 'form',component:FormComponent},
-<<<<<<< HEAD
+  {path: 'groupby', component:GroupbyComponent},
+
   {path: 'jointable', component:JointableComponent},
-  {path: 'join', component:JoinComponent}
-=======
+  
   {path: 'Page2', component:Page2Component},
   {path: 'Operations', component:OperationsComponent},
   {path: 'Join', component:JoinComponent},
   {path: 'Joincondition', component:JoinconditionComponent},
-  {path: 'jointable', component:JointableComponent}
->>>>>>> f53071369967d1ce913b70d4794e690f2afcdfb6
+  
+
   
   
 ];
