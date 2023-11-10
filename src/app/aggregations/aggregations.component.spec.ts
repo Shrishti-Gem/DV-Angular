@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { JoinComponent } from './join.component';
+import { AggregationsComponent } from './aggregations.component';
 
-describe('JoinComponent', () => {
-  let component: JoinComponent;
-  let fixture: ComponentFixture<JoinComponent>;
+describe('AggregationsComponent', () => {
+  let component: AggregationsComponent;
+  let fixture: ComponentFixture<AggregationsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ JoinComponent ]
+      declarations: [ AggregationsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(JoinComponent);
+    fixture = TestBed.createComponent(AggregationsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

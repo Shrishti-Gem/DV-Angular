@@ -9,11 +9,14 @@ import { Page1Component } from './page1/page1.component';
 import { TableselectionComponent } from './DB-components/DB-components/tableselection/tableselection.component';
 import { FormComponent } from './form/form.component';
 import { Page2Component } from './page2/page2.component';
-import { OperationsComponent } from './operations/operations.component';
+import { AggregationsComponent } from './aggregations/aggregations.component';
 import { JoinComponent } from './join/join.component';
 import { JointableComponent } from './jointable/jointable.component';
-
-
+import { JoinconditionComponent } from './joincondition/joincondition.component';
+import { WhereComponent } from './where/where.component';
+import { OrderbyComponent } from './orderby/orderby.component';
+import { GroupbyComponent } from './groupby/groupby.component';
+import { DisplayComponent } from './display/display.component';
 
 const routes: Routes = [
   
@@ -26,10 +29,14 @@ const routes: Routes = [
   {path: 'Tableselect',component:TableselectionComponent},
   {path: 'form',component:FormComponent},
   {path: 'Page2', component:Page2Component},
-  {path: 'Operations', component:OperationsComponent},
+  {path: 'Aggregations', component:AggregationsComponent},
   {path: 'Join', component:JoinComponent},
-  {path: 'jointable', component:JointableComponent}
-  
+  {path: 'Joincondition', component:JoinconditionComponent},
+  {path: 'jointable', component:JointableComponent},
+  {path: 'Where', component:WhereComponent},
+  {path: 'OrderBy', component:OrderbyComponent},
+  {path: 'GroupBy', component:GroupbyComponent},
+  {path: 'Display', component:DisplayComponent}
 ];
 
 @NgModule({

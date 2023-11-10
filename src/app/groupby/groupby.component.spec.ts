@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { JoinComponent } from './join.component';
+import { GroupbyComponent } from './groupby.component';
 
-describe('JoinComponent', () => {
-  let component: JoinComponent;
-  let fixture: ComponentFixture<JoinComponent>;
+describe('GroupbyComponent', () => {
+  let component: GroupbyComponent;
+  let fixture: ComponentFixture<GroupbyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ JoinComponent ]
+      declarations: [ GroupbyComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(JoinComponent);
+    fixture = TestBed.createComponent(GroupbyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

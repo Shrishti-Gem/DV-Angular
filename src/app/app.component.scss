@@ -9,43 +9,38 @@ mat-toolbar{
     background-color: #38A3A5;
 }
 table{
-    width: 50%;
-    align-items:center;
-    bottom: 0%;
-    margin-top: 0%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    
+  width: 50%;
+  align-items:center;
+  bottom: 0%;
+  margin-top: 0%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;    
 }
 .valign-center{
-    display:inline-flex;
-    align-items: center;
+  display:inline-flex;
+  align-items: center;
 }
 .example-tree-invisible { 
-    display: none; 
-  } 
+  display: none; 
+} 
     
-  .example-tree ul, 
-  .example-tree li { 
-    margin-top: 0; 
-    margin-bottom: 0; 
-    list-style-type: none; 
-  } 
+.example-tree ul, .example-tree li { 
+  margin-top: 0; 
+  margin-bottom: 0; 
+  list-style-type: none; 
+} 
     
-  /* This padding sets alignment of the nested nodes. */
-  .example-tree .mat-nested-tree-node div[role="group"] { 
-    padding-left: 40px; 
-  } 
-    
-    
-    
-  .example-tree div[role="group"] > .mat-tree-node { 
-    padding-left: 40px; 
+/* This padding sets alignment of the nested nodes. */
+.example-tree .mat-nested-tree-node div[role="group"] { 
+  padding-left:20px; 
 } 
   
-h1, 
-h3 { 
+.example-tree div[role="group"] > .mat-tree-node { 
+  padding-left:40px; 
+} 
+  
+h1, h3 { 
   color: green; 
   font-family: "Roboto", sans-serif; 
   text-align: left; 
@@ -56,5 +51,6 @@ h3 {
 } 
   
 .mat-tree-node { 
-  color: black; 
+  color: black;
+  padding-right: 20px;
 }

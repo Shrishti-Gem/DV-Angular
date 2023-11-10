@@ -1,38 +1,38 @@
 <mat-toolbar>
   <mat-toolbar-row>
     <button mat-button routerLink="/Join">Join Condition</button>
-    <button mat-button routerLink="/Page1">GroupBy</button>
+    <button mat-button routerLink="/GroupBy">GroupBy</button>
     <button mat-button routerLink="/OrderBy">Order By</button>
     <button mat-button routerLink="/Where">Where</button>
-    <button mat-button routerLink="/Page1">Display</button>
-    <button mat-button routerLink="/Operations">Aggregate</button>
-    <button mat-button routerLink="/Page2">Summary</button>
+    <button mat-button routerLink="/Display">Display</button>
+    <button mat-button routerLink="/Aggregations">Aggregate</button>
+    <button mat-button routerLink="/Summary">Summary</button>
   </mat-toolbar-row>
 </mat-toolbar>
 <div class="header-box" style="width: 100%">Define Where Clause</div>
 <div class="container">
   <div class="row" style="top: 20%; position: absolute">
-    <div *ngFor="let index of rowIndices; let i = index">
+    <div *ngFor="let index of rowIndices">
       <div class="select-operator">
         <div class="function-input-description">Select Table Name</div>
         <mat-form-field>
           <mat-label>Table Names</mat-label>
-          <mat-select [(ngModel)]="selectedTableNames[i]">
+          <mat-select [(ngModel)]="selectedTableNames[index]">
             <mat-option *ngFor="let tableName of tableNames" [value]="tableName">{{ tableName }}</mat-option>
           </mat-select>
         </mat-form-field>
-        <p *ngIf="selectedTableNames[i]">Selected Table Name: {{ selectedTableNames[i] }}</p>
+        <p *ngIf="selectedTableNames[index]">Selected Table Name: {{ selectedTableNames[index] }}</p>
       </div>
   
       <div class="select-operator">
         <div class="function-input-description">Select Column Name</div>
         <mat-form-field>
           <mat-label>Column Names</mat-label>
-          <mat-select [(ngModel)]="selectedColumnNames[i]">
-            <mat-option *ngFor="let columnName of tableData[selectedTableNames[i]]" [value]="columnName">{{ columnName }}</mat-option>
+          <mat-select [(ngModel)]="selectedColumnNames[index]">
+            <mat-option *ngFor="let columnName of tableData[selectedTableNames[index]]" [value]="columnName">{{ columnName }}</mat-option>
           </mat-select>
         </mat-form-field>
-        <p *ngIf="selectedColumnNames[i]">Selected Column Name: {{ selectedColumnNames[i] }}</p>
+        <p *ngIf="selectedColumnNames[index]">Selected Column Name: {{ selectedColumnNames[index] }}</p>
       </div>
 
       <div class="select-operator">
@@ -40,22 +40,20 @@
         <div class="dropdown">
           <mat-form-field>
             <mat-label>Available Functions</mat-label>
-            <mat-select [formControl]="operations" [(ngModel)]="selectedOptions[i]">
+            <mat-select [formControl]="operations" [(ngModel)]="selectedOptions[index]">
               <mat-option *ngFor="let option of options" [value]="option.name">{{ option.name }}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
-        <p *ngIf="selectedOptions[i]">Operator: {{ selectedOptions[i] }}</p>
+        <p *ngIf="selectedOptions[index]">Operator: {{ selectedOptions[index] }}</p>
       </div>
-      <div class="comparison-box"><input type="text" id="username" placeholder="Write comparison condition value"></div>
-      <div class="comparison-box">
-        <i class="material-icons" (click)="toggleAddOrDelete(i)">{{ isDeleteMode[i] ? 'delete' : 'add' }}</i>
-      </div>
+      <div class="comparison-box"><input type="text" id='username' placeholder="Write comparison condition value"></div>
+      <div class="comparison-box"><i class="material-icons" (click)="addRow()">add</i></div>
     </div>
   </div> 
   <div class="button-div">
-    <button routerLink="/Where" class="save-button"> Reset All </button>
+    <button class="save-button"> Reset All </button>
     <button class="save-button"> Save All </button>
-    <button routerLink="/Operations" class="save-button"> Proceed ></button>
+    <button routerLink="/Aggregations" class="save-button"> Proceed ></button>
   </div>
 </div>

@@ -1,0 +1,58 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button mat-button routerLink="/Join">Join Condition</button>
+    <button mat-button routerLink="/GroupBy">GroupBy</button>
+    <button mat-button routerLink="/OrderBy">Order By</button>
+    <button mat-button routerLink="/Where">Where</button>
+    <button mat-button routerLink="/Display">Display</button>
+    <button mat-button routerLink="/Aggregations">Aggregate</button>
+    <button mat-button routerLink="/Summary">Summary</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="header-box" style="width: 100%">Define Order By Condition</div>
+<div class="container">
+  <div class="row" style="top: 20%; position: absolute">
+    <div *ngFor="let index of rowIndices">
+      <div class="select-operator">
+        <div class="function-input-description">Select Table Name</div>
+        <mat-form-field>
+          <mat-label>Table Names</mat-label>
+          <mat-select [(ngModel)]="selectedTableNames[index]">
+            <mat-option *ngFor="let tableName of tableNames" [value]="tableName">{{ tableName }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p *ngIf="selectedTableNames[index]">Selected Table Name: {{ selectedTableNames[index] }}</p>
+      </div>
+  
+      <div class="select-operator">
+        <div class="function-input-description">Select Column Name</div>
+        <mat-form-field>
+          <mat-label>Column Names</mat-label>
+          <mat-select [(ngModel)]="selectedColumnNames[index]">
+            <mat-option *ngFor="let columnName of tableData[selectedTableNames[index]]" [value]="columnName">{{ columnName }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p *ngIf="selectedColumnNames[index]">Selected Column Name: {{ selectedColumnNames[index] }}</p>
+      </div>
+
+      <div class="select-operator">
+        <div class="function-input-description">Sort Order</div>
+        <div class="dropdown">
+          <mat-form-field>
+            <mat-label>Ascending(Default)</mat-label>
+            <mat-select [(ngModel)]="selectedOptions[index]">
+              <mat-option *ngFor="let option of options" [value]="option.name">{{ option.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <p *ngIf="selectedOptions[index]">Sort: {{ selectedOptions[index] }}</p>
+      </div>
+      <div class="comparison-box"><i class="material-icons" (click)="addRow()">add</i></div>
+    </div>
+  </div> 
+  <div class="button-div">
+    <button class="save-button"> Reset All </button>
+    <button class="save-button"> Save All </button>
+    <button routerLink="/Where" class="save-button"> Proceed ></button>
+  </div>
+</div>

@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormComponent } from 'src/app/form/form.component';
@@ -7,7 +6,6 @@ interface Database {
   value: string;
   viewValue: string;
 }
-
 
 @Component({
   selector: 'app-tableselection',
@@ -29,5 +27,3 @@ export class TableselectionComponent {
   }
 
   // checked = false;
- 
-

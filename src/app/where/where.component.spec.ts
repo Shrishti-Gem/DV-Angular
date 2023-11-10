@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { JoinComponent } from './join.component';
+import { WhereComponent } from './where.component';
 
-describe('JoinComponent', () => {
-  let component: JoinComponent;
-  let fixture: ComponentFixture<JoinComponent>;
+describe('WhereComponent', () => {
+  let component: WhereComponent;
+  let fixture: ComponentFixture<WhereComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ JoinComponent ]
+      declarations: [ WhereComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(JoinComponent);
+    fixture = TestBed.createComponent(WhereComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

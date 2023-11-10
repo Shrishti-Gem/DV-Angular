@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-page2',
-  templateUrl: './page2.component.html',
-  styleUrls: ['./page2.component.scss']
+  selector: 'app-where',
+  templateUrl: './where.component.html',
+  styleUrls: ['./where.component.scss']
 })
-export class Page2Component {
+export class WhereComponent {
   data= {                                        // Replace with your actual data
     'table_name1' : ['col1','col2','col3'],
     'table_name2' : ['col4','col5','col6'],
@@ -60,24 +60,5 @@ export class Page2Component {
     this.selectedTableNames.splice(index, 1);
     this.selectedColumnNames.splice(index, 1);
     this.selectedOptions.splice(index, 1);
-  }
-  deleteRowIndices: number[] = [];
-
-  toggleDeleteRow(index: number) {
-    if (this.deleteRowIndices.includes(index)) {
-      this.deleteRowIndices = this.deleteRowIndices.filter(i => i !== index);
-    } else {
-      this.deleteRowIndices.push(index);
-    }
-  }
-  isDeleteMode: boolean[] = [false]; // Initialize with one row by default
-
-  toggleAddOrDelete(index: number) {
-    this.isDeleteMode[index] = !this.isDeleteMode[index];
-
-    if (this.isDeleteMode[index] && index === this.rowIndices.length - 1) {
-      // If "delete" is clicked and it's the last row, add a new row
-      this.addRow();
-    }
   }
 }
